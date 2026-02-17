@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download TBI Messenger</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Helvetica, Arial, sans-serif;
+            background-color: #f0f2f5;
+        }
+
+        .header {
+            background-color: #075e54;
+            padding: 15px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo {
+            width: 45px;
+            height: 45px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+
+        .app-name {
+            color: white;
+            font-size: 24px;
+            font-weight: 500;
+        }
+
+        .download-btn-header {
+            background-color: #25d366;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+
+        .download-btn-header:hover {
+            background-color: #20ba5a;
+        }
+
+        .hero {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 30px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            color: #075e54;
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .hero-content p {
+            color: #667781;
+            font-size: 20px;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        .download-section {
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+        }
+
+        .platform-title {
+            color: #667781;
+            font-size: 14px;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+
+        .platform-name {
+            color: #075e54;
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .platform-desc {
+            color: #667781;
+            font-size: 16px;
+            margin-bottom: 25px;
+            line-height: 1.5;
+        }
+
+        .download-btn-main {
+            display: inline-block;
+            background-color: #25d366;
+            color: white;
+            padding: 15px 40px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+
+        .download-btn-main:hover {
+            background-color: #20ba5a;
+        }
+
+        .hero-image {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .phone-mockup {
+            width: 100%;
+            max-width: 400px;
+            background: white;
+            border-radius: 30px;
+            padding: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .chat-header {
+            background-color: #075e54;
+            padding: 15px;
+            border-radius: 10px 10px 0 0;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .chat-avatar {
+            width: 40px;
+            height: 40px;
+            background-color: #25d366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+
+        .chat-info {
+            flex: 1;
+        }
+
+        .chat-name {
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        .chat-status {
+            font-size: 12px;
+            opacity: 0.8;
+        }
+
+        .chat-body {
+            background-color: #e5ddd5;
+            padding: 20px;
+            min-height: 400px;
+            border-radius: 0 0 10px 10px;
+        }
+
+        .message {
+            margin-bottom: 15px;
+            display: flex;
+        }
+
+        .message-received {
+            justify-content: flex-start;
+        }
+
+        .message-sent {
+            justify-content: flex-end;
+        }
+
+        .message-bubble {
+            max-width: 70%;
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+
+        .bubble-received {
+            background-color: white;
+            border-radius: 0 8px 8px 8px;
+        }
+
+        .bubble-sent {
+            background-color: #dcf8c6;
+            border-radius: 8px 0 8px 8px;
+        }
+
+        .message-time {
+            font-size: 11px;
+            color: #667781;
+            margin-top: 5px;
+            text-align: right;
+        }
+
+        .image-message {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 8px;
+        }
+
+        .features {
+            background-color: white;
+            padding: 60px 30px;
+        }
+
+        .features-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        .feature {
+            text-align: center;
+        }
+
+        .feature-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .feature h3 {
+            color: #075e54;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .feature p {
+            color: #667781;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                grid-template-columns: 1fr;
+                padding: 40px 20px;
+            }
+
+            .hero-content h1 {
+                font-size: 32px;
+            }
+
+            .hero-content p {
+                font-size: 16px;
+            }
+
+            .phone-mockup {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo-section">
+            <div class="logo">💬</div>
+            <div class="app-name">TBI Messenger</div>
+        </div>
+        <a href="assets/TBI-2.19.8r2-conversations-free-universal-debug.apk" class="download-btn-header" download>Download</a>
+    </div>
+
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Download TBI Messenger</h1>
+            <p>Simple, secure, reliable messaging. Stay connected with your friends and family.</p>
+
+            <div class="download-section">
+                <div class="platform-title">Mobile</div>
+                <div class="platform-name">Android</div>
+                <div class="platform-desc">Get fast, secure messaging on your Android device.</div>
+                <a href="assets/TBI-2.19.8r2-conversations-free-universal-debug.apk" class="download-btn-main" download>Download APK</a>
+            </div>
+        </div>
+
+        <div class="hero-image">
+            <div class="phone-mockup">
+                <div class="chat-header">
+                    <div class="chat-avatar">👤</div>
+                    <div class="chat-info">
+                        <div class="chat-name">Contact</div>
+                        <div class="chat-status">online</div>
+                    </div>
+                </div>
+                <div class="chat-body">
+                    <div class="message message-received">
+                        <div class="message-bubble bubble-received">
+                            Hey! How are you?
+                            <div class="message-time">10:30 AM</div>
+                        </div>
+                    </div>
+
+                    <div class="message message-sent">
+                        <div class="message-bubble bubble-sent">
+                            I'm good! Thanks for asking 😊
+                            <div class="message-time">10:32 AM</div>
+                        </div>
+                    </div>
+
+                    <div class="message message-received">
+                        <div class="message-bubble bubble-received">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='150' viewBox='0 0 200 150'%3E%3Crect fill='%23e0e0e0' width='200' height='150'/%3E%3Ctext x='50%25' y='50%25' font-size='20' fill='%23999' text-anchor='middle' dominant-baseline='middle'%3E📷 Image%3C/text%3E%3C/svg%3E" class="image-message" alt="Sample image">
+                            Check out this photo!
+                            <div class="message-time">10:35 AM</div>
+                        </div>
+                    </div>
+
+                    <div class="message message-sent">
+                        <div class="message-bubble bubble-sent">
+                            Looks great! 👍
+                            <div class="message-time">10:36 AM</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="features">
+        <div class="features-container">
+            <div class="feature">
+                <div class="feature-icon">🔒</div>
+                <h3>Secure</h3>
+                <p>End-to-end encrypted messaging keeps your conversations private.</p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">📷</div>
+                <h3>Share Media</h3>
+                <p>Send photos, videos, and documents with ease.</p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">⚡</div>
+                <h3>Fast</h3>
+                <p>Messages are delivered quickly and reliably.</p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">🌐</div>
+                <h3>Cross-Platform</h3>
+                <p>Stay connected across all your devices.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
